@@ -118,6 +118,10 @@ podSecurityContext: {}
 
 resources: {}
 
+readinessProbe: {}
+
+livenessProbe: {}
+
 nodeSelector: {}
 
 tolerations: []

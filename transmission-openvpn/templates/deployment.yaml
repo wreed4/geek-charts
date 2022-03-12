@@ -42,6 +42,14 @@ spec:
 {{ toYaml .Values.volumeMounts | indent 12 }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+        {{- with .Values.readinessProbe }}
+          readinessProbe:
+{{ toYaml . | indent 12 }}
+        {{- end }}
+        {{- with .Values.livenessProbe }}
+          livenessProbe:
+{{ toYaml . | indent 12 }}
+        {{- end }}
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
